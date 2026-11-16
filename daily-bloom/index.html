@@ -164,12 +164,14 @@ h2{font-size:20px;font-weight:700}
 input::placeholder,textarea::placeholder{color:var(--faint)}
 .fields{display:flex;flex-direction:column;gap:12px}
 
-.tabs{position:fixed;left:0;right:0;bottom:0;z-index:10;background:rgba(0,0,0,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.tabs{position:fixed;left:0;right:0;bottom:0;z-index:2147483000;background:rgba(0,0,0,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .tabs-in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .tabs button{padding:12px 6px;border-radius:14px;font-weight:600;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px}
 .tabs button.on{background:var(--raise);color:var(--fg)}
 .tabs button.on svg{color:var(--accent)}
 .note{font-size:11.5px;color:var(--faint);text-align:center;margin:0}
+/* hide anything a host injects on top of the app (e.g. Netlify's badge/toolbar), so it never covers the tabs */
+body>:not(main):not(nav):not(script):not(a),html>:not(head):not(body){display:none!important}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 

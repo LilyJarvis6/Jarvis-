@@ -1,6 +1,6 @@
 /* Daily Bloom offline support: the app shell is cached so it opens without signal.
    index.html is fetched fresh when online (so updates show up), and falls back to the cache offline. */
-const CACHE = "bloom-v2";
+const CACHE = "bloom-v3";
 const SHELL = ["./", "index.html", "manifest.webmanifest", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
